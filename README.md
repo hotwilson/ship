@@ -13,9 +13,9 @@ The components varied during this exercise include these decisions:
    * Instantiate using scripts vs. Kubernetes
    * Instantiate database as a separate server vs. mlab vs. compose clouds
    * Databases used by the application MongoDB vs. Postgres, etc.
-   * Cloud environment Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
+   * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
 
-We condust this exercise so you can realistically compare 
+We conduct this exercise so you can realistically compare 
 the true effort needed for each choice of technologies.
 
 Let's start with using GitHub, Jenkins, Dockerhub on Heroku,
