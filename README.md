@@ -18,7 +18,7 @@ The components varied during this exercise include these decisions:
 We conduct this exercise so you can realistically compare 
 the true effort needed for each choice of technologies.
 
-Let's start with using GitHub, Jenkins, Dockerhub on Heroku,
+Let's start with using GitHub, Jenkins, Dockerhub on Digital Ocean,
 referencing a database in mlab.
 These all offer free usage options.
 
