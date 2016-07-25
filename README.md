@@ -1,21 +1,21 @@
 This repo provides you step-by-step instructions 
-to get a new custom program running on a server in the cloud, 
-then make a change. 
+to get a new custom program running on a server in the cloud.
+We then make a change and update the server through the automated "pipepline". 
 
-The components varied during this exercise include these decisions:
+The intent of this effort is to vary the 
+components deployed so you can realistically compare 
+the true effort needed for each choice of technologies.
 
    * Repositories GitHub vs. GitLab vs. Bitbucket
    * Continuous integration utilities Jenkins vs. Circle-CI vs. Shippable, etc.
    * Scripting with Maven vs. Ansible declarative statements
    * Bare metal vs. virtual instances vs. Docker containers
-   * Operating system CentOS vs. RedHat 
+   * Operating system CentOS vs. Ubuntu vs. RedHat 
    * Build from scratch vs. Dockerhub vs. reuse builds in Artifactory
-   * Instantiate using scripts vs. Kubernetes
+   * Instantiate using Kubernetes
    * Instantiate database as a separate server vs. mlab vs. compose clouds
    * Databases used by the application MongoDB vs. Postgres, etc.
    * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
-
-> We conduct this exercise so you can realistically compare the true effort needed for each choice of technologies.
 
 Let's start with using GitHub, Jenkins, Dockerhub on Digital Ocean,
 referencing a database in mlab.
@@ -116,6 +116,8 @@ See http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-application
 <a name="DockerDaemon"></a>
 
 ## Run Docker Daemon #
+
+The automated pipeline 
 
 0. On a Mac, use Homebrew cask to install the UI app within a Virtualbox:
 
