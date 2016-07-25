@@ -77,7 +77,24 @@ For sample apps we have 2 micro-services:
    draws whatever cron services are updating TTL (Time To Live)<br />
    (<a target="_blank" href="https://github.com/avinci/dv">https://github.com/avinci/dv</a>)
 
-QUESTION: How about using different branches of https://github.com/aye0aye/box
+QUESTION: What about different branches of https://github.com/aye0aye/box
+
+Files in these repos are described when appropriate below.
+
+   * **package.json** defines Node packages to be installed.
+   * **server.js** is the file Node invokes.
+
+   * **Gruntfile.js** 
+
+   * **bower.json** and bower_components folder
+   * **static** folder
+
+   * **shippable.yml** 
+   * **Dockerfile** 
+
+   * **build.sh** 
+   * **boot.sh** 
+   * **push.sh** 
 
 Because we have two apps, we can see when
 one service i.e. box or dv changes,
