@@ -18,7 +18,7 @@ the true effort needed for each choice of technologies.
    * Databases used by the application MongoDB vs. Postgres, etc.
    * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
 
-Let's start with using GitHub, Jenkins, Dockerhub on Digital Ocean,
+Let's start with using GitHub, CentOS, Jenkins, on Digital Ocean,
 referencing a database in mlab.
 These all offer free usage options.
 
@@ -60,8 +60,11 @@ The major steps in this end-to-end pipeline:
 
 <a name="InGitHub"></a>
 
-## Get into GitHub #
- 
+## App source into GitHub #
+
+<a title="shippable sample app 20160725-192x294-c71" href="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
+<img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
+                                             
 For sample apps we have 2 micro-services:
 
    0. A cron service called <strong>Box</strong>. 
@@ -74,7 +77,7 @@ For sample apps we have 2 micro-services:
    draws whatever cron services are updating TTL (Time To Live)<br />
    (<a target="_blank" href="https://github.com/avinci/dv">https://github.com/avinci/dv</a>)
 
-QUESTION: Why are we not using different branches of https://github.com/aye0aye/box
+QUESTION: How about using different branches of https://github.com/aye0aye/box
 
 Because we have two apps, we can see when
 one service i.e. box or dv changes,
@@ -87,6 +90,13 @@ We don’t want to deploy the entire app when one component changes.
 ## Dockerize the app #
 
 Dockerizing an application is the process of converting an application to run within a Docker container. 
+
+   <pre>
+FROM node:0.10.44-slim
+ADD . /home/demo/box/
+RUN cd /home/demo/box && npm install
+ENTRYPOINT ["/home/demo/box/boot.sh"]
+   </pre>
 
 While dockerizing most applications is straight-forward, there are a few problems that need to be worked around each time. Two common tasks during dockerization are:
 
