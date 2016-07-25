@@ -38,7 +38,7 @@ with a unique tag (a semantic build version number).
 
 The major steps in this end-to-end pipeline:
 
-   0. <a href="#InGitHub">Define apps in GitHub.com</a>
+   0. <a href="#InGitHub">Define app + ops files in GitHub.com</a>
    0. <a href="#Dockerize">Dockerize apps</a>
    0. <a href="#JenkinsIn">Setup Jenkins instance</a>
    0. <a href="#JenkinsBuild">Build in Jenkins</a>
@@ -60,7 +60,7 @@ The major steps in this end-to-end pipeline:
 
 <a name="InGitHub"></a>
 
-## App source into GitHub #
+## Define app + ops source files in GitHub #
 
 <a title="shippable sample app 20160725-192x294-c71" href="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
 <img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
