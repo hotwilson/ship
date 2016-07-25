@@ -1,6 +1,7 @@
 This repo provides you step-by-step instructions 
 to get a new custom program running on a server in the cloud.
-We then make a change and update the server through the automated "pipepline". 
+We then make a change and update the server through the automated 
+<a href="#Pipeline">""pipepline"</a>. 
 
 The intent of this effort is to vary the 
 components deployed so you can realistically compare 
@@ -24,6 +25,11 @@ These all offer free usage options.
 The intended audience for this demo are experienced
 <strong>developers</strong> who want to focus on innovation and
 <strong>DevOps</strong> cloud system administrators supporting developers.
+
+
+<a name="Pipeline"></a>
+
+## Pipeline #
 
 Our <strong>pipeline</strong> is to use a Jenkins instance 
 to build the two apps,
