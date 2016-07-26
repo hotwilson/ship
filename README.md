@@ -23,6 +23,10 @@ choice of technologies</a>.
    * Instantiate database as a separate server vs. mlab vs. compose clouds
    * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
 
+   * Testing of functional performance and capacity
+   * Logging
+   * Monitoring
+
 <hr />
 
 <a name="TechChoices"></a>
