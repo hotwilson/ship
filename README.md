@@ -1,11 +1,11 @@
-This repo provides you step-by-step instructions to get 
+This repo provides you step-by-step instructions to get
 <a href="#SampleApp">a sample app</a>
 running on a server in the cloud.
 We then make a change and update the server through an automated continuous integration
-<a href="#Pipelines">"pipepline"</a>. 
+<a href="#Pipelines">"pipepline"</a>.
 
-The intent of this effort is to vary the 
-DevOps technologies used so you can realistically compare 
+The intent of this effort is to vary the
+DevOps technologies used so you can realistically compare
 the true effort needed for each <a href="#TechChoices">
 choice of technologies</a>.
 
@@ -14,7 +14,7 @@ choice of technologies</a>.
    * Scripting with Maven scripts vs. declarative statements
 
    * Bare metal vs. virtual instances vs. Docker containers
-   * Operating system CentOS vs. Ubuntu vs. RedHat 
+   * Operating system CentOS vs. Ubuntu vs. RedHat
    * Build in VMs vs. Dockerhub
    * Build from scratch vs. reuse builds in Artifactory
    * Instantiate using Kubernetes
@@ -37,13 +37,13 @@ From the above menu there can be many combinations.
 
 So let's first build the <a href="#MostCommonDevOps">
 most common DevOps technologies in use today</a>,<br />
-then substitutte one piece at a time to observe the difference.
+then substitute one piece at a time to observe the difference.
 
-The first substitute Jenkins with 
-<strong>Shippable</strong> for continueous integration
+The first substitute Jenkins with
+<strong>Shippable</strong> for continuous integration
 to see the impact of:
 
-   * Scripting with Maven scripts in Jenkins vs. declarative statements 
+   * Scripting with Maven scripts in Jenkins vs. declarative statements
 
    * A single pipeline view in Jenkins vs. several on a single pane of glass (SPOG)
 
@@ -62,15 +62,18 @@ BTW, the intended audience for this article are experienced
 
 We have 2 micro-services, each defined in a separate repo:
 
-0. A cron service called <strong>Box</strong>. 
-   This updates into MongoDB a periodic heart beat 
+0. A cron service called <strong>Box</strong>.
+   This updates into MongoDB a periodic heart beat
    to show it's still up and running<br />
-   (<a target="_blank" href="https://github.com/avinci/box">https://github.com/avinci/box</a>)
+   (<a target="_blank" href="https://github.com/ttrahan-beta/box">https://github.com/ttrahan-beta/box</a>)
 
 0. A visualizer UI called <strong>dv</strong>
-   that connects to the MongoDB Box updated by Box and 
+   that connects to the MongoDB Box updated by Box and
    draws whatever cron services are updating TTL (Time To Live)<br />
-   (<a target="_blank" href="https://github.com/avinci/dv">https://github.com/avinci/dv</a>)
+   (<a target="_blank" href="https://github.com/ttrahan-beta/dv">https://github.com/ttrahan-beta/dv</a>)
+
+Integrated tests are at
+https://github.com/ttrahan-beta/test
 
 QUESTION: What about different branches of https://github.com/aye0aye/box
 
@@ -79,31 +82,28 @@ Files in these repos are described when appropriate below.
    * **package.json** defines Node packages to be installed.
    * **server.js** is the file Node invokes.
 
-   * **Gruntfile.js** 
+   * **Gruntfile.js**
 
    * **bower.json** and bower_components folder
    * **static** folder
 
-   * **shippable.yml** 
+   * **shippable.yml**
    * <a href="#Dockerize">**Dockerfile**</a> to "Dockerize" the app
 
-   * **build.sh** 
-   * **boot.sh** 
-   * **push.sh** 
+   * **build.sh**
+   * **boot.sh**
+   * **push.sh**
 
 
 <a name="Pipelines"></a>
 
-## Automted Pipelines #
+## Automated Pipelines #
 
 Because we have two apps, we can see when
 one service i.e. box or dv changes,
 only the changed image should be deployed.
 We don’t want to deploy the entire app when one component changes.
 
-
-Integrated tests are at
-https://github.com/ttrahan-beta/test
 
 
 
@@ -154,7 +154,7 @@ The major steps in this Jenkins pipeline:
 
 ## Dockerize the app #
 
-Dockerizing an application is the process of converting an application to run within a Docker container. 
+Dockerizing an application is the process of converting an application to run within a Docker container.
 
    <pre>
 FROM node:0.10.44-slim
@@ -176,7 +176,7 @@ While dockerizing most applications is straight-forward, there are a few problem
 0. Use coding that send application logs to a central logging system via
    STDOUT/STDERR when it defaults to files in the container’s file system.
 
-Some use a small Golang application 
+Some use a small Golang application
 http://github.com/jwilder/dockerize
 to simplify the dockerization process.
 
@@ -187,8 +187,8 @@ See http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-application
 <a name="JenkinsIn"></a>
 
 ## Setup Jenkins Instance #
- 
-There are several options to creating 
+
+There are several options to creating
 
    * On a Mac OSX for development and experimentation
 
@@ -211,7 +211,7 @@ docker pull jenkins
 
 ## Run Docker Daemon #
 
-The automated pipeline 
+The automated pipeline
 
 0. On a Mac, use Homebrew cask to install the UI app within a Virtualbox:
 
@@ -281,7 +281,7 @@ Password:
    In most cases, the system administrator configures a process manager such as SysVinit, Upstart, or systemd to manage the docker daemon’s start and stop.
 
    Volumes are units of highly available block storage that you can attach to your Droplet.
-   Use volumes to store assets, backups, databases, and more. 
+   Use volumes to store assets, backups, databases, and more.
    Volumes can be moved between Droplets and you can increase their size as needed.
 
 0. Run Docker using a command such as:
@@ -339,7 +339,7 @@ See 'docker run --help'.
 <a name="Push2Dockerhub"></a>
 
 ## Push into Dockerhub #
- 
+
    * Read <a target="_blank" href="https://docs.docker.com/engine/tutorials/dockerrepos/">
    https://docs.docker.com/engine/tutorials/dockerrepos</a>
 
@@ -364,26 +364,26 @@ See 'docker run --help'.
 
 https://help.github.com/articles/creating-releases/
 
- 
+
 <a name="CommitTrigger"></a>
 
 ## Hook GitHub to trigger Build on commit #
 
-- Now we create a APP release anytime any of the BOX or DV images change and 
+- Now we create a APP release anytime any of the BOX or DV images change and
 this is also a semantic version number that is independent of the above
 
-- We then deploy this Release into a AWS cluster called Test. 
+- We then deploy this Release into a AWS cluster called Test.
 Deployment is automatic every time a new release is created
 
-- We need have a manual step where the release that is currently deploy to test, 
+- We need have a manual step where the release that is currently deploy to test,
 will be updated with “RC” tag.
 
 
 <a name="JenkinsAutoTests"></a>
 
 ## Jenkins Auto Test Trigger #
- 
-* Trigger automated tests of build 
+
+* Trigger automated tests of build
 
 
 
@@ -399,8 +399,8 @@ will be updated with “RC” tag.
 <a name="SlackNotification"></a>
 
 ## Slack notification #
- 
-- we want to get notified into a slack room called test and prod 
+
+- we want to get notified into a slack room called test and prod
 depending on what env what service and what version is getting deployed
 
 QUESTION: Which room?  We need a public one not associated with a vendor.
@@ -479,7 +479,7 @@ QUESTION: Which room?  We need a public one not associated with a vendor.
    <pre>
 The authenticity of host '192.241.155.147 (192.241.155.147)' can't be established.
 ECDSA key fingerprint is SHA256:sdfsdfsdfu5+Xsaf4COHb0UaRTxeoycUh4tLj1kwNQ.
-Are you sure you want to continue connecting (yes/no)? 
+Are you sure you want to continue connecting (yes/no)?
    </pre>
 
    Type <strong>yes</strong> because this is expected behavior.
@@ -494,7 +494,7 @@ Are you sure you want to continue connecting (yes/no)?
 
    See https://cloud.digitalocean.com/images/snapshots
 
-Aditionally: 
+Aditionally:
 
    * https://www.docker.com/products/docker-toolbox
    * https://www.digitalocean.com/support
@@ -504,14 +504,14 @@ Aditionally:
 
 ## Auto Deploy to Digital Ocean #
 
-- We should then be able to trigger a manual deployment into production by 
+- We should then be able to trigger a manual deployment into production by
 supplying a valid RC release from the list of RC tagged releases
 
 
 <a name="SmokeTests"></a>
 
 ## Smoke Test Trigger #
- 
+
 Trigger automated tests after successful deployment to a Test environment
 
 
