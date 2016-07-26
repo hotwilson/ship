@@ -1,42 +1,125 @@
-This repo provides you step-by-step instructions 
-to get a new custom program running on a server in the cloud.
-We then make a change and update the server through the automated 
-<a href="#Pipeline">""pipepline"</a>. 
+This repo provides you step-by-step instructions to get 
+<a href="#SampleApp">a sample app</a>
+running on a server in the cloud.
+We then make a change and update the server through an automated continuous integration
+<a href="#Pipelines">"pipepline"</a>. 
 
 The intent of this effort is to vary the 
-components deployed so you can realistically compare 
-the true effort needed for each choice of technologies.
+DevOps technologies used so you can realistically compare 
+the true effort needed for each <a href="#TechChoices">
+choice of technologies</a>.
 
    * Repositories GitHub vs. GitLab vs. Bitbucket
-   * Continuous integration utilities Jenkins vs. Circle-CI vs. Shippable, etc.
-   * Scripting with Maven vs. Ansible declarative statements
+   * Continuous integration utilities Jenkins vs. Circle-CI vs. Shippable
+   * Scripting with Maven scripts vs. declarative statements
+
    * Bare metal vs. virtual instances vs. Docker containers
    * Operating system CentOS vs. Ubuntu vs. RedHat 
-   * Build from scratch vs. Dockerhub vs. reuse builds in Artifactory
+   * Build in VMs vs. Dockerhub
+   * Build from scratch vs. reuse builds in Artifactory
    * Instantiate using Kubernetes
-   * Instantiate database as a separate server vs. mlab vs. compose clouds
+
    * Databases used by the application MongoDB vs. Postgres, etc.
+   * Instantiate database as a separate server vs. mlab vs. compose clouds
    * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
 
-Let's start with using GitHub, CentOS, Jenkins, on Digital Ocean,
-referencing a database in mlab.
-These all offer free usage options.
+<hr />
 
-The intended audience for this demo are experienced
+<a name="TechChoices"></a>
+
+## Choice of technologies #
+
+From the above menu there can be many combinations.
+
+So let's first build the <a href="#MostCommonDevOps">
+most common DevOps technologies in use today</a>,<br />
+then substitutte one piece at a time to observe the difference.
+
+The first substitute Jenkins with 
+<strong>Shippable</strong> for continueous integration
+to see the impact of:
+
+   * Scripting with Maven scripts in Jenkins vs. declarative statements 
+
+   * A single pipeline view in Jenkins vs. several on a single pane of glass (SPOG)
+
+BTW, the intended audience for this article are experienced
 <strong>developers</strong> who want to focus on innovation and
 <strong>DevOps</strong> cloud system administrators supporting developers.
 
 
-<a name="Pipeline"></a>
+<hr />
 
-## Pipeline #
+<a name="SampleApp"></a>
 
-Our <strong>pipeline</strong> is to use a Jenkins instance 
-to build the two apps,
-then if successful, automatically push Docker images into Dockerhub.com
-with a unique tag (a semantic build version number).
+## Sample Apps #
 
-The major steps in this end-to-end pipeline:
+<a title="shippable sample app 20160725-192x294-c71" href="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
+<img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
+
+We have 2 micro-services, each defined in a separate repo:
+
+0. A cron service called <strong>Box</strong>. 
+   This updates into MongoDB a periodic heart beat 
+   to show it's still up and running<br />
+   (<a target="_blank" href="https://github.com/avinci/box">https://github.com/avinci/box</a>)
+
+0. A visualizer UI called <strong>dv</strong>
+   that connects to the MongoDB Box updated by Box and 
+   draws whatever cron services are updating TTL (Time To Live)<br />
+   (<a target="_blank" href="https://github.com/avinci/dv">https://github.com/avinci/dv</a>)
+
+QUESTION: What about different branches of https://github.com/aye0aye/box
+
+Files in these repos are described when appropriate below.
+
+   * **package.json** defines Node packages to be installed.
+   * **server.js** is the file Node invokes.
+
+   * **Gruntfile.js** 
+
+   * **bower.json** and bower_components folder
+   * **static** folder
+
+   * **shippable.yml** 
+   * <a href="#Dockerize">**Dockerfile**</a> to "Dockerize" the app
+
+   * **build.sh** 
+   * **boot.sh** 
+   * **push.sh** 
+
+Because we have two apps, we can see when
+one service i.e. box or dv changes,
+only the changed image should be deployed.
+We don’t want to deploy the entire app when one component changes.
+
+https://github.com/ttrahan-beta/test
+
+
+
+<hr />
+
+<a name="Pipelines"></a>
+
+## Automted Pipelines #
+
+
+
+<a href="#MostCommonDevOps">
+
+## Most common DevOps technologies #
+
+GitHub, CentOS, Jenkins, on Digital Ocean,
+referencing a database in mlab.
+These all offer free (or nearly free) usage options.
+
+The Jenkins <strong>pipeline</strong>  
+builds from two repos,
+then push resulting Docker images  
+with a unique tag (a semantic build version number)
+into Dockerhub.com
+
+The major steps in this Jenkins pipeline:
 
    0. <a href="#InGitHub">Define app + ops files in GitHub.com</a>
    0. <a href="#Dockerize">Dockerize apps</a>
@@ -61,45 +144,6 @@ The major steps in this end-to-end pipeline:
 <a name="InGitHub"></a>
 
 ## Define app + ops source files in GitHub #
-
-<a title="shippable sample app 20160725-192x294-c71" href="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
-<img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
-                                             
-For sample apps we have 2 micro-services:
-
-   0. A cron service called <strong>Box</strong>. 
-   This updates into MongoDB a periodic heart beat 
-   to show it's still up and running<br />
-   (<a target="_blank" href="https://github.com/avinci/box">https://github.com/avinci/box</a>)
-
-   0. A visualizer UI called <strong>dv</strong>
-   that connects to the MongoDB Box updated by Box and 
-   draws whatever cron services are updating TTL (Time To Live)<br />
-   (<a target="_blank" href="https://github.com/avinci/dv">https://github.com/avinci/dv</a>)
-
-QUESTION: What about different branches of https://github.com/aye0aye/box
-
-Files in these repos are described when appropriate below.
-
-   * **package.json** defines Node packages to be installed.
-   * **server.js** is the file Node invokes.
-
-   * **Gruntfile.js** 
-
-   * **bower.json** and bower_components folder
-   * **static** folder
-
-   * **shippable.yml** 
-   * **Dockerfile** 
-
-   * **build.sh** 
-   * **boot.sh** 
-   * **push.sh** 
-
-Because we have two apps, we can see when
-one service i.e. box or dv changes,
-only the changed image should be deployed.
-We don’t want to deploy the entire app when one component changes.
 
 
 <a name="Dockerize"></a>
