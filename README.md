@@ -58,7 +58,6 @@ BTW, the intended audience for this article are experienced
 
 ## Sample Apps #
 
-<a title="shippable sample app 20160725-192x294-c71" href="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
 <img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
 
 We have 2 micro-services, each defined in a separate repo:
@@ -92,24 +91,25 @@ Files in these repos are described when appropriate below.
    * **boot.sh** 
    * **push.sh** 
 
+
+<a name="Pipelines"></a>
+
+## Automted Pipelines #
+
 Because we have two apps, we can see when
 one service i.e. box or dv changes,
 only the changed image should be deployed.
 We don’t want to deploy the entire app when one component changes.
 
+
+Integrated tests are at
 https://github.com/ttrahan-beta/test
 
 
 
 <hr />
 
-<a name="Pipelines"></a>
-
-## Automted Pipelines #
-
-
-
-<a href="#MostCommonDevOps">
+<a name="MostCommonDevOps"></a>
 
 ## Most common DevOps technologies #
 
@@ -182,17 +182,30 @@ to simplify the dockerization process.
 
 See http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-applications/
 
+<strong>The text to follow is currently being actively updated.</strong>
 
 <a name="JenkinsIn"></a>
 
 ## Setup Jenkins Instance #
  
+There are several options to creating 
+
+   * On a Mac OSX for development and experimentation
+
+   * <a target="_blank" href="https://www.cloudbees.com/blog/jenkins-docker-hub-plugin-image-based-workflows">
+   As an instance within Cloudbees</a>
+
+   * <a target="_blank" href="https://docs.pivotal.io/cloudbees/Jenkins.html">
+   Jenkins within Pivotal Cloudbees</a> with a 15 day trial license.
+
+   * Build Jenkins from <a target="_blank" href="https://github.com/docker-library/official-images">
+   GitHub (stackbrew)</a>
+
+docker pull jenkins
+
    * https://hub.docker.com/_/jenkins/
    * https://github.com/jenkinsci/docker
-   * https://github.com/docker-library/official-images (stackbrew)
-   * https://www.cloudbees.com/blog/jenkins-docker-hub-plugin-image-based-workflows
 
-    docker pull jenkins
 
 <a name="DockerDaemon"></a>
 
