@@ -190,10 +190,15 @@ See http://jasonwilder.com/blog/2014/10/13/a-simple-way-to-dockerize-application
 
 There are several options to creating
 
-   * On a Mac OSX for development and experimentation
+   * On a MacOS OSX MacBook for local development and experimentation
+
+   * On a Windows 10 laptop for local development and experimentation
+
+   * <a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-jenkins-for-continuous-development-integration-on-centos-7">
+   As a Jenkins instance in CentOS 7 droplet within Digital Ocean</a> SaaS cloud.
 
    * <a target="_blank" href="https://www.cloudbees.com/blog/jenkins-docker-hub-plugin-image-based-workflows">
-   As an instance within Cloudbees</a>
+   As a Jenkins instance within Cloudbees</a> SaaS cloud.
 
    * <a target="_blank" href="https://docs.pivotal.io/cloudbees/Jenkins.html">
    Jenkins within Pivotal Cloudbees</a> with a 15 day trial license.
