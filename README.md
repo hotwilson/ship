@@ -60,7 +60,7 @@ BTW, the intended audience for this article are experienced
 
 ## Sample Apps #
 
-<img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
+![ci pipeline node v01-20160729-650x365-i11](https://cloud.githubusercontent.com/assets/300046/17256861/9e6e4c6a-557c-11e6-9296-6c3f72d80cec.jpg)
 
 We have 2 micro-services, each defined in a separate repo:
 
