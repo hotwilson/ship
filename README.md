@@ -60,7 +60,7 @@ BTW, the intended audience for this article are experienced
 
 ## Sample Apps #
 
-![ci pipeline node v01-20160729-650x365-i11](https://cloud.githubusercontent.com/assets/300046/17256861/9e6e4c6a-557c-11e6-9296-6c3f72d80cec.jpg)
+<img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
 
 We have 2 micro-services, each defined in a separate repo:
 
@@ -118,8 +118,8 @@ referencing a database in mlab.
 These all offer free (or nearly free) usage options.
 
 The major steps in this workflow:
-
-![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg)
+ 
+![ci pipeline node v01-20160729-650x365-i11](https://cloud.githubusercontent.com/assets/300046/17256861/9e6e4c6a-557c-11e6-9296-6c3f72d80cec.jpg)
 
 <strong>The text to follow is currently being actively updated.</strong>
 
