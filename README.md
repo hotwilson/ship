@@ -257,7 +257,7 @@ We are using a static (always on instance) within Digital Ocean.
 The above are based on information from a variety of sources:
 
 * http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
-
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-jenkins-for-continuous-development-integration-on-centos-7
 
 
 <hr />
