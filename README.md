@@ -117,8 +117,6 @@ GitHub, CentOS, Jenkins, on Digital Ocean,
 referencing a database in mlab.
 These all offer free (or nearly free) usage options.
 
-<strong>The text to follow is currently being actively updated.</strong>
-
 The major steps in this workflow:
 
 The Jenkins <strong>pipeline</strong>  
@@ -127,7 +125,9 @@ then push resulting Docker images
 with a unique tag (a semantic build version number)
 into Dockerhub.com
 
-![ci pipeline node v01-20160729-650x361-i12](https://cloud.githubusercontent.com/assets/300046/17254929/14e2ec88-5574-11e6-9df1-115f860e49d6.jpg)
+![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg
+
+<strong>The text to follow is currently being actively updated.</strong>
 
    0. <a href="#Dockerize">Dockerize apps with a Dockerfile</a>
    0. <a href="#InGitHub">Define app + ops files in GitHub.com with a version tag</a>
