@@ -178,6 +178,37 @@ See <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">this blo
 
 ## Tag a specific Git commit manually #
 
+On local Git:
+
+0. In Terminal, be in your repo's folder.
+0. For more information, see https://git-scm.com/book/en/v2/Git-Basics-Tagging
+0. List tags (in the singular):
+
+   <tt><strong>
+   git tag
+   </strong></tt>
+
+0. Add an annotated tag on the current commit:
+
+   <tt><strong>
+   git tag -a v01.04 -m "my version 01.04"
+   </strong></tt>
+
+   PROTIP: Zero-pad leading zeroes for sorting.
+   
+   Alternately, add an annotated tag on some random commit hash:
+
+   <tt><strong>
+   git tag -a v1.2 9fceb02
+   </strong></tt>
+
+0.  Transfer all of tags to the remote server that are not already there:
+
+   <tt><strong>
+   git push origin --tags
+   </strong></tt>
+
+   CAUTION: A separate request is necessary to push tags than code.
 
 <hr />
 
