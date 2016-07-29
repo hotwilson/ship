@@ -131,7 +131,7 @@ with a unique tag (a semantic build version number)
 into Dockerhub.com
 
    0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile in GitHub</a>
-   0. <a href="#InGitHub">The repo is tagged</a>
+   0. <a href="#InGitHub">The repo is tagged manually</a>
    0. <a href="#CommitTrigger">Hook GitHub to trigger Build on commit</a>
    0. <a href="#JenkinsIn">A CI server (running Jenkins) is instantiated (in Digital Ocean)</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout</a>
