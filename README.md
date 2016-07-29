@@ -24,8 +24,9 @@ choice of technologies</a>.
    * Cloud environment Digital Ocean vs. Heroku vs. AWS vs. Azure vs. Google vs. Rackspace
 
    * Testing of functional performance and capacity
-   * Logging
+   * Logging for traceability
    * Monitoring
+   * Scalability for enterprise use
 
 <hr />
 
