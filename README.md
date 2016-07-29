@@ -90,10 +90,10 @@ QUESTION: What about different branches of https://github.com/aye0aye/box
 
 Files in these repos are described when appropriate below.
 
-   * **package.json** defines Node packages to be installed.
-   * **server.js** is the file Node invokes.
+   * **package.json** defines Node packages to be installed
+   * **server.js** is the file Node invokes
 
-   * **Gruntfile.js**
+   * **Gruntfile.js** to assemble the various sub-components
 
    * **bower.json** and bower_components folder
    * **static** folder
