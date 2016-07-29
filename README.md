@@ -120,16 +120,9 @@ These all offer free (or nearly free) usage options.
 
 The major steps in this workflow:
  
-![ci pipeline node v01-20160729-650x365-i11](https://cloud.githubusercontent.com/assets/300046/17256861/9e6e4c6a-557c-11e6-9296-6c3f72d80cec.jpg)
+![ci pipeline node v01-20160729-650x346](https://cloud.githubusercontent.com/assets/300046/17258341/a2878404-5583-11e6-8be6-144a2a3dab63.jpg)
 
-<strong>The text to follow is currently being actively updated.</strong>
-
-
-The Jenkins <strong>pipeline</strong>  
-builds from two repos,
-then push resulting Docker images  
-with a unique tag (a semantic build version number)
-into Dockerhub.com
+<strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
    0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile in GitHub</a>
    0. <a href="#InGitHub">The repo is tagged manually</a>
@@ -137,21 +130,20 @@ into Dockerhub.com
    0. <a href="#JenkinsIn">A CI server (running Jenkins) is instantiated (in Digital Ocean)</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout</a>
 
-   0. <a href="#VaryDockerOptions">Define Docker credentials in CI (Jenkins)</a>
    0. <a href="#JenkinsIn">Only Java programs that compiles WAR files need Artifactory</a>
-   0. <a href="#JenkinsBuild">CI invokes Docker</a>
-   0. <a href="#JenkinsBuild">Docker Build with a tag</a>
+   0. <a href="#JenkinsBuild">Build in Jenkins with a tag</a>
+   0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
    0. <a href="#Push2Dockerhub">Push to DockerHub (or other image repository)</a>
-
    0. <a href="#PullDockerhub">Pull from DockerHub</a>
-   0. <a href="#TagGitHub">Register Tag release</a>
-   0. <a href="#DeployDO">Provision VPC on targer web server running apps</a>
-   0. <a href="#DefineDO">Docker run to create container</a>
 
+   0. <a href="#TagGitHub">Register Tag release</a>
+   0. <a href="#DeployDO">Provision VPC</a>
+   0. <a href="#DefineDO">Docker run to create container</a>
    0. <a href="#SmokeTests">UAT Smoke Test on server</a>
    0. <a href="#VaryDockerOptions">Logging</a>
+
    0. <a href="#VaryDockerOptions">Monitoring</a>
-   0. <a href="#VaryDockerOptions">Scaling for enterprise use</a>
+   0. <a href="#VaryDockerOptions">Scaling tests</a>
    0. <a href="#SlackNotification">Slack notification server is ready for use</a>
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
