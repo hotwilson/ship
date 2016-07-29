@@ -63,7 +63,7 @@ BTW, the intended audience for this article are experienced
 
 <img align="right" width="192" height="294" src="https://cloud.githubusercontent.com/assets/300046/17109659/c4ef30e8-524d-11e6-8a97-eb816206a1ef.png">
 
-We have 2 micro-services, each defined in a separate repo:
+As an example, let's consider 2 micro-services, each defined in a separate repo:
 
 0. A cron service called <strong>Box</strong>.
    This updates into MongoDB a periodic heart beat
@@ -74,6 +74,9 @@ We have 2 micro-services, each defined in a separate repo:
    that connects to the MongoDB Box updated by Box and
    draws whatever cron services are updating TTL (Time To Live)<br />
    (<a target="_blank" href="https://github.com/ttrahan-beta/dv">https://github.com/ttrahan-beta/dv</a>)
+
+A Java (Spring Boot) sample app can also be considered,
+but let's first look at the simpler Node.js example.
 
 Because we have two apps, we can see when
 one service i.e. box or dv changes,
