@@ -129,7 +129,7 @@ Manual tasks are listed above the blue box representing the Jenkins CI server.
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
    0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile</a>
-   0. <a href="#InGitHub">A specific commit in GitHub is tagged manually</a>
+   0. <a href="#TagInGitHub">Tag a specific Git commit manually</a>
    0. <a href="#JenkinsSetup">Instantiate the CI server (running Jenkins with packages, in Digital Ocean)</a>
    0. <a href="#CommitTrigger">Hook GitHub to trigger build on commit to the Develop branch</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout of Develop branch</a>
@@ -157,11 +157,41 @@ Manual tasks are listed above the blue box representing the Jenkins CI server.
 
 <hr />
 
+<a name="Dockerize"></a>
 
+## Dockerize the app #
+
+Dockerizing an application is the process of converting an application to run within a Docker container.
+
+   <pre>
+FROM node:0.10.44-slim
+ADD . /home/demo/box/
+RUN cd /home/demo/box && npm install
+ENTRYPOINT ["/home/demo/box/boot.sh"]
+   </pre>
+
+See <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">this blog</a>.
+
+<hr />
+
+<a name="TagInGitHub"></a>
+
+## Tag a specific Git commit manually #
+
+
+<hr />
+
+<a name="JenkinsSetup"></a>
+
+## Instantiate the CI server #
+
+We are using a static (always on instance) within Digital Ocean.
+
+Install "___" packages for accessing GitHub and DockerHub.
 
 Link to a hosted repository service
 
-
+<hr />
 
 <a name="Push2Dockerhub"></a>
 
