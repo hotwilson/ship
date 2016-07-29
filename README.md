@@ -125,7 +125,7 @@ then push resulting Docker images
 with a unique tag (a semantic build version number)
 into Dockerhub.com
 
-![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg
+![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg)
 
 <strong>The text to follow is currently being actively updated.</strong>
 
