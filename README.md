@@ -120,7 +120,7 @@ These all offer free (or nearly free) usage options.
 
 The major steps in this workflow:
  
-![ci pipeline node v01-20160729-650x346](https://cloud.githubusercontent.com/assets/300046/17258341/a2878404-5583-11e6-8be6-144a2a3dab63.jpg)
+![ci pipeline node v01-20160729-650x344-i11](https://cloud.githubusercontent.com/assets/300046/17259342/55dcbd2c-5588-11e6-8c3f-03950ae53189.jpg)
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
