@@ -117,19 +117,20 @@ GitHub, CentOS, Jenkins, on Digital Ocean,
 referencing a database in mlab.
 These all offer free (or nearly free) usage options.
 
+<strong>The text to follow is currently being actively updated.</strong>
+
+The major steps in this workflow:
+
 The Jenkins <strong>pipeline</strong>  
 builds from two repos,
 then push resulting Docker images  
 with a unique tag (a semantic build version number)
 into Dockerhub.com
 
-<strong>The text to follow is currently being actively updated.</strong>
+![ci pipeline node v01-20160729-650x361-i12](https://cloud.githubusercontent.com/assets/300046/17254929/14e2ec88-5574-11e6-9df1-115f860e49d6.jpg)
 
-
-The major steps in this workflow:
-
-   0. <a href="#InGitHub">Define app + ops files in GitHub.com</a>
-   0. <a href="#Dockerize">Dockerize apps</a>
+   0. <a href="#Dockerize">Dockerize apps with a Dockerfile</a>
+   0. <a href="#InGitHub">Define app + ops files in GitHub.com with a version tag</a>
    0. <a href="#JenkinsIn">Setup Jenkins instance</a>
    0. <a href="#JenkinsBuild">Build in Jenkins</a>
    0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
