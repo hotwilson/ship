@@ -115,18 +115,17 @@ GitHub, CentOS, Jenkins, on Digital Ocean,
 referencing a database in mlab.
 These all offer free (or nearly free) usage options.
 
-
 <a name="Pipelines"></a>
 
-## Automated Pipelines #
+## Automating the Pipeline #
 
-![ci pipeline node v01-20160729-650x345-i11](https://cloud.githubusercontent.com/assets/300046/17262243/7a8b715e-5597-11e6-8a01-72a4140cf39b.jpg)
+![ci pipeline node v01-20160729-650x352-i11](https://cloud.githubusercontent.com/assets/300046/17262747/87bc735c-559a-11e6-87d3-ae26d57c2884.jpg)
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
    0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile</a>
    0. <a href="#InGitHub">A specific commit in GitHub is tagged manually</a>
-   0. <a href="#JenkinsIn">Instantiate the CI server (running Jenkins in Digital Ocean)</a>
+   0. <a href="#JenkinsSetup">Instantiate the CI server (running Jenkins with packages, in Digital Ocean)</a>
    0. <a href="#CommitTrigger">Hook GitHub to trigger build on commit to the Develop branch</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout of Develop branch</a>
 
@@ -150,3 +149,24 @@ These all offer free (or nearly free) usage options.
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
    0. <a href="#VaryDockerOptions">Update app source and cycle through again</a>
+
+<hr />
+
+
+
+Link to a hosted repository service
+
+
+
+<a name="Push2Dockerhub"></a>
+
+Test using <a target="_blank" href="http://requestb.in/">RequestBin (http://requestb.in)</a>, 
+which gives you a URL that collects requests made to it 
+and let you inspect them in a human-friendly way.
+Use RequestBin to see what your HTTP client is sending or to inspect and debug webhook requests.
+
+See https://docs.docker.com/docker-hub/webhooks/
+
+If you have an automated build repository in Docker Hub, you can use Webhooks to cause an action in another application in response to an event in the repository. Docker Hub webhooks fire when an image is built in, or a new tag added to, your automated build repository.
+
+With your webhook, you specify a target URL and a JSON payload to deliver. The example webhook below generates an HTTP POST that delivers a JSON payload:
