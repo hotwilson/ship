@@ -120,7 +120,7 @@ These all offer free (or nearly free) usage options.
 
 ## Automated Pipelines #
 
-![ci pipeline node v01-20160729-650x347-i11](https://cloud.githubusercontent.com/assets/300046/17260992/cbe52ace-5590-11e6-8e1e-4bcf7b471e0f.jpg)
+![ci pipeline node v01-20160729-650x345-i11](https://cloud.githubusercontent.com/assets/300046/17262243/7a8b715e-5597-11e6-8a01-72a4140cf39b.jpg)
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
