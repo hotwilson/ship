@@ -119,31 +119,37 @@ These all offer free (or nearly free) usage options.
 
 The major steps in this workflow:
 
+![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg)
+
+<strong>The text to follow is currently being actively updated.</strong>
+
+
 The Jenkins <strong>pipeline</strong>  
 builds from two repos,
 then push resulting Docker images  
 with a unique tag (a semantic build version number)
 into Dockerhub.com
 
-![ci pipeline node v01-20160729-650x366-i11](https://cloud.githubusercontent.com/assets/300046/17256219/d45d4004-5579-11e6-8142-af7dacaad2bd.jpg)
-
-<strong>The text to follow is currently being actively updated.</strong>
-
-   0. <a href="#Dockerize">Dockerize apps with a Dockerfile</a>
-   0. <a href="#InGitHub">Define app + ops files in GitHub.com with a version tag</a>
-   0. <a href="#JenkinsIn">Setup Jenkins instance</a>
-   0. <a href="#JenkinsBuild">Build in Jenkins</a>
-   0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
-
-   0. <a href="#TagDocker">Add Docker semantic tags</a>
-   0. <a href="#Push2Dockerhub">Push to Dockerhub.com</a>
-   0. <a href="#Push2Dockerhub">Push to Dockerhub.com</a>
-
-   0. <a href="#TagGitHub">Tag GitHub release</a>
+   0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile in GitHub</a>
+   0. <a href="#InGitHub">The repo is tagged</a>
    0. <a href="#CommitTrigger">Hook GitHub to trigger Build on commit</a>
-   0. <a href="#SlackNotification">Slack notification</a>
+   0. <a href="#JenkinsIn">A CI server (running Jenkins) is instantiated (in Digital Ocean)</a>
+   0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout</a>
 
-   0. <a href="#DefineDO">Define Test and Prod instances in Digital Ocean</a>
-   0. <a href="#DeployDO">Auto Deploy to Digital Ocean</a>
+   0. <a href="#JenkinsIn">Only Java programs that compiles WAR files need Artifactory</a>
+   0. <a href="#JenkinsBuild">Build in Jenkins with a tag</a>
+   0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
+   0. <a href="#Push2Dockerhub">Push to DockerHub (or other image repository)</a>
+   0. <a href="#PullDockerhub">Pull from DockerHub</a>
+
+   0. <a href="#TagGitHub">Register Tag release</a>
+   0. <a href="#DeployDO">Provision VPC</a>
+   0. <a href="#DefineDO">Docker run to create container</a>
+   0. <a href="#SmokeTests">UAT Smoke Test on server</a>
+   0. <a href="#VaryDockerOptions">Logging</a>
+
+   0. <a href="#VaryDockerOptions">Monitoring</a>
+   0. <a href="#VaryDockerOptions">Scaling tests</a>
+   0. <a href="#SlackNotification">Slack notification server is ready for use</a>
+
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
-   0. <a href="#SmokeTests">Smoke Test Trigger</a>
