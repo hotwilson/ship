@@ -74,6 +74,11 @@ We have 2 micro-services, each defined in a separate repo:
    draws whatever cron services are updating TTL (Time To Live)<br />
    (<a target="_blank" href="https://github.com/ttrahan-beta/dv">https://github.com/ttrahan-beta/dv</a>)
 
+Because we have two apps, we can see when
+one service i.e. box or dv changes,
+only the changed image should be deployed.
+We don’t want to deploy the entire app when one component changes.
+
 Integrated tests are at
 https://github.com/ttrahan-beta/test
 
@@ -100,11 +105,6 @@ Files in these repos are described when appropriate below.
 <a name="Pipelines"></a>
 
 ## Automated Pipelines #
-
-Because we have two apps, we can see when
-one service i.e. box or dv changes,
-only the changed image should be deployed.
-We don’t want to deploy the entire app when one component changes.
 
 
 <hr />
