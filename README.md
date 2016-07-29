@@ -137,20 +137,21 @@ into Dockerhub.com
    0. <a href="#JenkinsIn">A CI server (running Jenkins) is instantiated (in Digital Ocean)</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout</a>
 
+   0. <a href="#VaryDockerOptions">Define Docker credentials in CI (Jenkins)</a>
    0. <a href="#JenkinsIn">Only Java programs that compiles WAR files need Artifactory</a>
-   0. <a href="#JenkinsBuild">Build in Jenkins with a tag</a>
-   0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
+   0. <a href="#JenkinsBuild">CI invokes Docker</a>
+   0. <a href="#JenkinsBuild">Docker Build with a tag</a>
    0. <a href="#Push2Dockerhub">Push to DockerHub (or other image repository)</a>
-   0. <a href="#PullDockerhub">Pull from DockerHub</a>
 
+   0. <a href="#PullDockerhub">Pull from DockerHub</a>
    0. <a href="#TagGitHub">Register Tag release</a>
-   0. <a href="#DeployDO">Provision VPC</a>
+   0. <a href="#DeployDO">Provision VPC on targer web server running apps</a>
    0. <a href="#DefineDO">Docker run to create container</a>
+
    0. <a href="#SmokeTests">UAT Smoke Test on server</a>
    0. <a href="#VaryDockerOptions">Logging</a>
-
    0. <a href="#VaryDockerOptions">Monitoring</a>
-   0. <a href="#VaryDockerOptions">Scaling tests</a>
+   0. <a href="#VaryDockerOptions">Scaling for enterprise use</a>
    0. <a href="#SlackNotification">Slack notification server is ready for use</a>
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
