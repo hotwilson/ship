@@ -133,15 +133,14 @@ The major steps in this workflow:
    0. <a href="#JenkinsIn">Define Docker credentials in CI (Jenkins)</a>
    0. <a href="#JenkinsIn">Only Java programs that compiles WAR files need Artifactory</a>
    0. <a href="#JenkinsBuild">Invoke / connect Docker Jenkins package</a>
-   0. <a href="#JenkinsBuild">Build in Jenkins with a tag</a>
-   0. <a href="#JenkinsAutoTests">Auto Test Trigger in Jenkins</a>
+   0. <a href="#JenkinsBuild">Build Docker image with with a tag</a>
+   0. <a href="#Push2Dockerhub">Push Docker image to DockerHub (or other image repository)</a>
 
-   0. <a href="#Push2Dockerhub">Push to DockerHub (or other image repository)</a>
-   0. <a href="#PullDockerhub">Pull from DockerHub</a>
+   0. <a href="#PullDockerhub">Pull Docker image from DockerHub</a>
    0. <a href="#TagGitHub">Register Tag release</a>
    0. <a href="#DeployDO">Provision VPC</a>
-   0. <a href="#DefineDO">Docker run to create container</a>
-   0. <a href="#SmokeTests">UAT Smoke Test on server using Mocha or other test utility</a>
+   0. <a href="#DefineDO">Run Docker to create container from Docker image</a>
+   0. <a href="#SmokeTests">Perform Smoke Test on server using Mocha or other test utility</a>
 
    0. <a href="#VaryDockerOptions">Logging for traceability</a>
    0. <a href="#VaryDockerOptions">Monitoring for workflow analytics</a>
@@ -149,3 +148,4 @@ The major steps in this workflow:
    0. <a href="#SlackNotification">Slack notification server is ready for use</a>
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
+   0. <a href="#VaryDockerOptions">Update app source and cycle through again</a>
