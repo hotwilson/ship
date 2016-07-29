@@ -194,9 +194,11 @@ On local Git:
    git tag -a v01.04 -m "my version 01.04"
    </strong></tt>
 
-   PROTIP: Zero-pad leading zeroes for sorting.
+   PROTIP: Come up with a standard on whether to zero-pad leading zeroes for sorting.
+   Git and GitHub are smart enough to sort what comes before and after dots separately.
+   But other programs may not be that smart.
    
-   Alternately, add an annotated tag on some random commit hash:
+   Alternately, add an annotated tag on a previous commit hash:
 
    <tt><strong>
    git tag -a v1.2 9fceb02
