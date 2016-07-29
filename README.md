@@ -117,7 +117,7 @@ These all offer free (or nearly free) usage options.
 
 ## Automated Pipelines #
 
-![ci pipeline node v01-20160729-650x351-i11](https://cloud.githubusercontent.com/assets/300046/17259728/2176387c-558a-11e6-8c10-884a64b07d33.jpg)
+![ci pipeline node v01-20160729-650x346-i11](https://cloud.githubusercontent.com/assets/300046/17260377/32ebd33e-558d-11e6-9ef4-151fc336c9e1.jpg)
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
@@ -129,20 +129,21 @@ These all offer free (or nearly free) usage options.
 
    0. <a href="#JenkinsIn">Define Docker credentials in CI (Jenkins)</a>
    0. <a href="#JenkinsIn">Only Java programs that compiles WAR files need Artifactory</a>
+   0. <a href="#JenkinsBuild">Commit into Develop branch on GitHub</a>
    0. <a href="#JenkinsBuild">Invoke / connect Docker Jenkins package</a>
    0. <a href="#JenkinsBuild">Build Docker image with with a tag</a>
-   0. <a href="#Push2Dockerhub">Push Docker image to DockerHub (or other image repository)</a>
 
+   0. <a href="#Push2Dockerhub">Push Docker image to DockerHub (or other image repository)</a>
    0. <a href="#PullDockerhub">Pull Docker image from DockerHub</a>
    0. <a href="#TagGitHub">Register APIs and external databases to be used</a>
    0. <a href="#DeployDO">Provision VPC</a>
    0. <a href="#DefineDO">Run Docker to create container from Docker image</a>
-   0. <a href="#SmokeTests">Perform Smoke Test on server using Mocha or other test utility</a>
 
+   0. <a href="#SmokeTests">Perform Smoke Test on server using Mocha or other test utility</a>
    0. <a href="#VaryDockerOptions">Logging for traceability</a>
    0. <a href="#VaryDockerOptions">Monitoring for workflow analytics</a>
    0. <a href="#VaryDockerOptions">Scaling for enterprise use</a>
-   0. <a href="#SlackNotification">Slack notification server is ready for use</a>
+   0. <a href="#SlackNotification">Send notification (via Slack) that server is ready for use</a>
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
    0. <a href="#VaryDockerOptions">Update app source and cycle through again</a>
