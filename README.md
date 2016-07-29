@@ -115,11 +115,16 @@ GitHub, CentOS, Jenkins, on Digital Ocean,
 referencing a database in mlab.
 These all offer free (or nearly free) usage options.
 
+The sequence of tasks to establish such an automated pipeline is illustrated in the diagram below.
+
+
 <a name="Pipelines"></a>
 
 ## Automating the Pipeline #
 
 ![ci pipeline node v01-20160729-650x352-i11](https://cloud.githubusercontent.com/assets/300046/17262747/87bc735c-559a-11e6-87d3-ae26d57c2884.jpg)
+
+Manual tasks are listed above the blue box representing the Jenkins CI server.
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
