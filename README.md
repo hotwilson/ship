@@ -220,9 +220,45 @@ On local Git:
 
 We are using a static (always on instance) within Digital Ocean.
 
-Install "___" packages for accessing GitHub and DockerHub.
+0. Under "Manage Jenkins" -> "Manage Plugins", select and install plugins 
+   for accessing GitHub and DockerHub:
 
-Link to a hosted repository service
+   * Github Plugin from https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin
+   * Git Plugin from https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin
+   <br /><br />
+
+0. Restart Jenkins so the installation takes.
+
+0. In Manage Jenkins -> Configure System, 
+   make sure the path to git is correctly set.
+
+0. Choose "Manually manage hook URLs" under the "Github Web Hook" section. 
+
+0. At the Jenkins home page, click "create new jobs".
+0. Enter an item name such as "dv" for the Jenkins project.
+0. Select "Freestyle project", then OK.
+0. Under "Source Code Management", select "Git".
+0. Type the Repository URL, such as https://github.com/hotwilson/dv.
+0. Click Add, then Jenkins.
+0. For Kind, select Certificate.
+
+   PROTIP: Define a service account for Jenkins to use so several jobs can authenticate to Github.
+
+0. Create a new set of private/public keys, and then either create a Github user for Bender or use the Github deploy keys feature. Follow those links for the excellent guides from Github.
+
+
+0. Under "Build Triggers", tick "Build when a change is pushed to Github".
+
+0. Save and build your job to get a successful build which clones the repository to the webhost.
+ 
+0. Confirm by getting in the server and inspecting it.
+
+
+The above are based on information from a variety of sources:
+
+* http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
+
+
 
 <hr />
 
