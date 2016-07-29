@@ -134,7 +134,7 @@ These all offer free (or nearly free) usage options.
    0. <a href="#Push2Dockerhub">Push Docker image to DockerHub (or other image repository)</a>
 
    0. <a href="#PullDockerhub">Pull Docker image from DockerHub</a>
-   0. <a href="#TagGitHub">Register Tag release</a>
+   0. <a href="#TagGitHub">Register APIs and external databases to be used</a>
    0. <a href="#DeployDO">Provision VPC</a>
    0. <a href="#DefineDO">Run Docker to create container from Docker image</a>
    0. <a href="#SmokeTests">Perform Smoke Test on server using Mocha or other test utility</a>
