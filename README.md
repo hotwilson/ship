@@ -117,14 +117,14 @@ These all offer free (or nearly free) usage options.
 
 ## Automated Pipelines #
 
-![ci pipeline node v01-20160729-650x346-i11](https://cloud.githubusercontent.com/assets/300046/17260377/32ebd33e-558d-11e6-9ef4-151fc336c9e1.jpg)
+![ci pipeline node v01-20160729-650x347-i11](https://cloud.githubusercontent.com/assets/300046/17260992/cbe52ace-5590-11e6-8e1e-4bcf7b471e0f.jpg)
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
    0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile</a>
    0. <a href="#InGitHub">A specific commit in GitHub is tagged manually</a>
+   0. <a href="#JenkinsIn">Instantiate the CI server (running Jenkins in Digital Ocean)</a>
    0. <a href="#CommitTrigger">Hook GitHub to trigger build on commit to the Develop branch</a>
-   0. <a href="#JenkinsIn">A CI server (running Jenkins) is instantiated (in Digital Ocean)</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout of Develop branch</a>
 
    0. <a href="#JenkinsIn">Define Docker credentials in CI (Jenkins)</a>
@@ -140,9 +140,9 @@ These all offer free (or nearly free) usage options.
    0. <a href="#DefineDO">Run Docker to create container from Docker image</a>
 
    0. <a href="#SmokeTests">Perform Smoke Test on server using Mocha or other test utility</a>
-   0. <a href="#VaryDockerOptions">Logging for traceability</a>
-   0. <a href="#VaryDockerOptions">Monitoring for workflow analytics</a>
-   0. <a href="#VaryDockerOptions">Scaling for enterprise use</a>
+   0. <a href="#VaryDockerOptions">Verify Logging for traceability</a>
+   0. <a href="#VaryDockerOptions">Verify Monitoring for workflow analytics</a>
+   0. <a href="#VaryDockerOptions">Verify Scaling for enterprise use</a>
    0. <a href="#SlackNotification">Send notification (via Slack) that server is ready for use</a>
 
    0. <a href="#VaryDockerOptions">Vary Docker Options</a>
