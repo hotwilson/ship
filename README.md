@@ -1,4 +1,4 @@
-This repo provides you step-by-step instructions to get
+This file provides step-by-step instructions to get
 <a href="#SampleApp">a sample app</a>
 running on a server in the cloud.
 We then make a change and update the server through an automated continuous integration
@@ -68,12 +68,14 @@ As an example, let's consider 2 micro-services, each defined in a separate repo:
 0. A cron service called <strong>Box</strong>.
    This updates into MongoDB a periodic heart beat
    to show it's still up and running<br />
-   (<a target="_blank" href="https://github.com/ttrahan-beta/box">https://github.com/ttrahan-beta/box</a>)
+   (<a target="_blank" href="https://github.com/hotwilson/box">
+   https://github.com/hotwilson/box</a>)
 
 0. A visualizer UI called <strong>dv</strong>
    that connects to the MongoDB Box updated by Box and
    draws whatever cron services are updating TTL (Time To Live)<br />
-   (<a target="_blank" href="https://github.com/ttrahan-beta/dv">https://github.com/ttrahan-beta/dv</a>)
+   (<a target="_blank" href="https://github.com/hotwilson/dv">
+   https://github.com/hotwilson/dv</a>)
 
 A Java (Spring Boot) sample app can also be considered,
 but let's first look at the simpler Node.js example.
@@ -128,10 +130,10 @@ Manual tasks are listed above the blue box representing the Jenkins CI server.
 
 <strong>Details of tasks to achieve the above is currently being actively updated.</strong>
 
-   0. <a href="#Dockerize">Apps are Dockerized with a Dockerfile</a>
-   0. <a href="#TagInGitHub">Tag a specific Git commit manually</a>
-   0. <a href="#JenkinsSetup">Instantiate the CI server (running Jenkins with packages, in Digital Ocean)</a>
-   0. <a href="#CommitTrigger">Hook GitHub to trigger build on commit to the Develop branch</a>
+   0. <a href="https://wilsonmar.github.io/dockerize/">Apps are Dockerized with a Dockerfile</a>
+   0. <a href="https://wilsonmar.github.io/git-commits/">Tag a specific Git commit manually</a>
+   0. <a href="https://wilsonmar.github.io/digital-ocean/">Instantiate the CI server in Digital Ocean running Jenkins</a>
+   0. <a href="#CommitTrigger">Configure Jenkins packages and hooks to trigger build on commit to the Develop branch</a>
    0. <a href="#JenkinsIn">The CI server obtains the repos by a checkout of Develop branch</a>
 
    0. <a href="#JenkinsIn">Define Docker credentials in CI (Jenkins)</a>
@@ -171,46 +173,6 @@ ENTRYPOINT ["/home/demo/box/boot.sh"]
    </pre>
 
 See <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">this blog</a>.
-
-<hr />
-
-<a name="TagInGitHub"></a>
-
-## Tag a specific Git commit manually #
-
-On local Git:
-
-0. In Terminal, be in your repo's folder.
-0. For more information, see https://git-scm.com/book/en/v2/Git-Basics-Tagging
-0. List tags (in the singular):
-
-   <tt><strong>
-   git tag
-   </strong></tt>
-
-0. Add an annotated tag on the current commit:
-
-   <tt><strong>
-   git tag -a v01.04 -m "my version 01.04"
-   </strong></tt>
-
-   PROTIP: Come up with a standard on whether to zero-pad leading zeroes for sorting.
-   Git and GitHub are smart enough to sort what comes before and after dots separately.
-   But other programs may not be that smart.
-   
-   Alternately, add an annotated tag on a previous commit hash:
-
-   <tt><strong>
-   git tag -a v1.2 9fceb02
-   </strong></tt>
-
-0.  Transfer all of tags to the remote server that are not already there:
-
-   <tt><strong>
-   git push origin --tags
-   </strong></tt>
-
-   CAUTION: A separate request is necessary to push tags than code.
 
 <hr />
 
