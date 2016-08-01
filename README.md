@@ -85,6 +85,8 @@ one service i.e. box or dv changes,
 only the changed image should be deployed.
 We don’t want to deploy the entire app when one component changes.
 
+TODO: Add DevDependencies mocha and supertest to Node sample app.
+
 Integrated tests are at
 https://github.com/ttrahan-beta/test
 
@@ -158,81 +160,3 @@ Manual tasks are listed above the blue box representing the Jenkins CI server.
    0. <a href="#VaryDockerOptions">Update app source and cycle through again</a>
 
 <hr />
-
-<a name="Dockerize"></a>
-
-## Dockerize the app #
-
-Dockerizing an application is the process of converting an application to run within a Docker container.
-
-   <pre>
-FROM node:0.10.44-slim
-ADD . /home/demo/box/
-RUN cd /home/demo/box && npm install
-ENTRYPOINT ["/home/demo/box/boot.sh"]
-   </pre>
-
-See <a target="_blank" href="https://wilsonmar.github.io/docker-setup/">this blog</a>.
-
-<hr />
-
-<a name="JenkinsSetup"></a>
-
-## Instantiate the CI server #
-
-We are using a static (always on instance) within Digital Ocean.
-
-0. Under "Manage Jenkins" -> "Manage Plugins", select and install plugins 
-   for accessing GitHub and DockerHub:
-
-   * Github Plugin from https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin
-   * Git Plugin from https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin
-   <br /><br />
-
-0. Restart Jenkins so the installation takes.
-
-0. In Manage Jenkins -> Configure System, 
-   make sure the path to git is correctly set.
-
-0. Choose "Manually manage hook URLs" under the "Github Web Hook" section. 
-
-0. At the Jenkins home page, click "create new jobs".
-0. Enter an item name such as "dv" for the Jenkins project.
-0. Select "Freestyle project", then OK.
-0. Under "Source Code Management", select "Git".
-0. Type the Repository URL, such as https://github.com/hotwilson/dv.
-0. Click Add, then Jenkins.
-0. For Kind, select Certificate.
-
-   PROTIP: Define a service account for Jenkins to use so several jobs can authenticate to Github.
-
-0. Create a new set of private/public keys, and then either create a Github user for Bender or use the Github deploy keys feature. Follow those links for the excellent guides from Github.
-
-
-0. Under "Build Triggers", tick "Build when a change is pushed to Github".
-
-0. Save and build your job to get a successful build which clones the repository to the webhost.
- 
-0. Confirm by getting in the server and inspecting it.
-
-
-The above are based on information from a variety of sources:
-
-* http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
-* https://www.digitalocean.com/community/tutorials/how-to-set-up-jenkins-for-continuous-development-integration-on-centos-7
-
-
-<hr />
-
-<a name="Push2Dockerhub"></a>
-
-Test using <a target="_blank" href="http://requestb.in/">RequestBin (http://requestb.in)</a>, 
-which gives you a URL that collects requests made to it 
-and let you inspect them in a human-friendly way.
-Use RequestBin to see what your HTTP client is sending or to inspect and debug webhook requests.
-
-See https://docs.docker.com/docker-hub/webhooks/
-
-If you have an automated build repository in Docker Hub, you can use Webhooks to cause an action in another application in response to an event in the repository. Docker Hub webhooks fire when an image is built in, or a new tag added to, your automated build repository.
-
-With your webhook, you specify a target URL and a JSON payload to deliver. The example webhook below generates an HTTP POST that delivers a JSON payload:
